@@ -1,15 +1,36 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
+import { Container } from '@nextui-org/react';
+// import Footer from './Footer';
+// import Header from './Header';
+import Navbar from './Navbar';
 
-type Props = {
+export interface Props {
   children: ReactNode;
-};
+}
 
-const Layout = ({ children }: Props) => {
+const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
   return (
-    <div>
-      Youre Wrapped in Layout
-      {children}
-      Layout End
+    <div id="app-container">
+      {/* <Header /> */}
+      <Navbar />
+      <Container
+        lg={true}
+        id="main-container"
+        display="flex"
+        as="main"
+        alignContent="space-between"
+        className="main-container"
+        css={{
+          position: 'relative',
+          minHeight: '100vh',
+          '@mdMax': {
+            overflowX: 'hidden',
+          },
+        }}
+      >
+        {children}
+        {/* <Footer /> */}
+      </Container>
     </div>
   );
 };
