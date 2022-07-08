@@ -5,29 +5,17 @@ import { NextComponentType, NextPageContext } from 'next';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
 import { ReactElement } from 'react';
-import { NextUIProvider, globalCss } from '@nextui-org/react';
 // inspx for inspecting using cmd/alt in dev
 import Inspect from 'inspx';
 import { ThemeProvider } from 'next-themes';
 import NProgress from 'nprogress';
 import { Head } from '@/components/next';
-import { darkTheme, lightTheme } from '@/config/themes';
+import { dark, light } from '@/config/themes';
 
 //Binding events.
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
-
-// https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/#dynamic-viewport
-export const applyGlobalCSS = globalCss({
-  body: { height: '100bvh' },
-  '#__next': {
-    height: '100vh',
-    '& div[data-overlay-container]': {
-      minHeight: '100%',
-    },
-  },
-});
 
 // Augment Pages with Layout
 type ComponentWithLayout<P> = NextComponentType<NextPageContext, any, P> & {
@@ -43,23 +31,17 @@ type AppPropsWithLayout<P = Record<string, unknown>> = AppProps<P> & {
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page);
-  applyGlobalCSS();
   return (
     <>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
         value={{
-          light: lightTheme.className,
-          dark: darkTheme.className,
+          light: light,
+          dark: dark,
         }}
       >
-        <NextUIProvider>
-          <Head />
-          <Inspect>
-            {getLayout(<Component {...pageProps} />, pageProps)}
-          </Inspect>
-        </NextUIProvider>
+        <Head />
+        <Inspect>{getLayout(<Component {...pageProps} />, pageProps)}</Inspect>
       </ThemeProvider>
     </>
   );

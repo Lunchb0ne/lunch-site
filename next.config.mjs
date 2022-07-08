@@ -16,7 +16,8 @@ const config = {
     domains: ['raw.githubusercontent.com'],
   },
   experimental: {
-    // serverComponents: true,// Wait for next-ui to support react 18
+    images: { allowFutureImage: true },
+    serverComponents: true,
     optimizeCss: true,
   },
 };

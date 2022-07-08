@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+const handler = (req: NextApiRequest, res: NextApiResponse) => {
   console.log(req);
   res.status(200).json({
     apple: '🍎',
@@ -11,3 +11,5 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     watermelon: '🍉',
   });
 };
+
+export default handler;

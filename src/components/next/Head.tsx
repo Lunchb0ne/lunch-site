@@ -1,7 +1,7 @@
 import NextHead from 'next/head';
 
 export const Head = ({
-  title = 'Next.js App',
+  title = 'Abhishek Aryan | Personal Portfolio',
   description = '...',
 }: {
   title?: string;
