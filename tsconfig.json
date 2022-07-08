@@ -1,13 +1,22 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["src", "next-env.d.ts"],
-  "exclude": ["node_modules"],
+  "include": [
+    "src",
+    "next-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "compilerOptions": {
     "jsx": "preserve",
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["esnext", "dom", "dom.iterable"],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
     "strict": true,
     "noEmit": true,
     "allowJs": true,
@@ -20,6 +29,10 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   }
 }
