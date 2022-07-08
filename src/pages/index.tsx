@@ -67,7 +67,14 @@ function Index() {
           </motion.div>
         </motion.div>
       </Box>
-      <Button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      <Button
+        onClick={() => {
+          // Add the transition before the switching happens, so we dont get a weird flash of transition at the start
+          document.documentElement.style.transition =
+            'background 1s ease-in-out';
+          setTheme(theme === 'light' ? 'dark' : 'light');
+        }}
+      >
         Change Theme!
       </Button>
     </>
