@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
+import { Card } from '@/components/Dragger';
 import { Button, Text } from '@/components/elements';
 import { Box } from '@/components/layout';
 import { getLayout } from '@/layouts/Layout';
@@ -19,7 +20,10 @@ function Index() {
           quos, quas recusandae perferendis nisi eum accusantium mollitia id
           doloremque. Commodi, voluptas earum!
         </Text>
-        <motion.div ref={constraints}>
+        {Array(8).map((_, idx) => (
+          <Card key={idx} />
+        ))}
+        {/* <motion.div ref={constraints}>
           <motion.div drag dragConstraints={constraints}>
             <Image
               src={'/hero/nextjs.svg'}
@@ -65,9 +69,10 @@ function Index() {
               alt="Nextjs Logo"
             />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </Box>
       <Button
+        outline
         onClick={() => {
           // Add the transition before the switching happens, so we dont get a weird flash of transition at the start
           document.documentElement.style.transition =
