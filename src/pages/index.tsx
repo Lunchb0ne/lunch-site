@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { Card } from '@/components/Dragger';
 import { Button, Text } from '@/components/elements';
@@ -9,12 +6,13 @@ import { getLayout } from '@/layouts/Layout';
 
 function Index() {
   const { theme, setTheme } = useTheme();
-  const constraints = useRef(null);
   return (
     <>
       <Box>
-        <Text h1>Recent Work</Text>
-        <Text>
+        <Text h1 font={'$cursive'} css={{ dropShadow: '$blur' }}>
+          Recent Work
+        </Text>
+        <Text font="$sansSerif" css={{ textShadow: '$soft' }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
           corrupti delectus deserunt saepe facere praesentium laborum, animi
           quos, quas recusandae perferendis nisi eum accusantium mollitia id
@@ -76,7 +74,7 @@ function Index() {
         onClick={() => {
           // Add the transition before the switching happens, so we dont get a weird flash of transition at the start
           document.documentElement.style.transition =
-            'background 1s ease-in-out';
+            'background-color 0.5s ease-in-out';
           setTheme(theme === 'light' ? 'dark' : 'light');
         }}
       >

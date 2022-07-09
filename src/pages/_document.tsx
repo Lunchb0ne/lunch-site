@@ -20,16 +20,12 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap"
           rel="stylesheet"
         />
         <link
           rel="stylesheet"
           href={`https://cdn.jsdelivr.net/combine/${sanitizeCSS}`}
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
-          rel="stylesheet"
         />
         <style
           id="stitches"

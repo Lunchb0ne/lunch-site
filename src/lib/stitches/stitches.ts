@@ -16,6 +16,8 @@ export type CSS = StitchesCSS<typeof config>;
 const fonts = {
   sans: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
   mono: 'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+  sansSerif: 'Lato, Geneva, Verdana, sans-serif',
+  cursive: 'Righteous, system-ui',
 };
 
 export const {
@@ -150,6 +152,7 @@ export const applyGlobalCSS = globalCss({
   body: { height: '100dvh' },
   '#__next': { height: '100vh' },
   '#__next > span > div': { minHeight: '100%' },
+  '#__next > div': { minHeight: '100%' },
 });
 
 export const StyledComponent = styled('div');
