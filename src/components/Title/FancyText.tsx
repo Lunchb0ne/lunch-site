@@ -8,7 +8,7 @@ const FancyText: React.FC<{}> = () => {
   const fadeUp: MotionProps['variants'] = {
     hidden: {
       opacity: 0,
-      y: '50px',
+      y: 50,
     },
     normal: {
       opacity: 1,
@@ -17,19 +17,18 @@ const FancyText: React.FC<{}> = () => {
     },
     show: {
       opacity: 1,
-      y: '0px',
+      y: 0,
       transition: {
         type: 'spring',
         staggerChildren: 0.4,
       },
     },
     hover: {
-      x: [0, 4, 7],
-      y: [0, -2, 5],
+      y: 6,
       transition: {
         repeatType: 'reverse',
         repeat: Infinity,
-        duration: 2,
+        type: 'spring',
       },
     },
   };
@@ -39,9 +38,12 @@ const FancyText: React.FC<{}> = () => {
         drag
         variants={fadeUp}
         whileHover={'hover'}
-        dragConstraints={{ left: 10, right: 10, bottom: 10, top: 10 }}
+        dragConstraints={{ left: 5, right: 5, bottom: 2, top: 2 }}
         initial="hidden"
         animate="show"
+        css={{
+          dropShadow: '$blur',
+        }}
       >
         {NAME.map((word, idx) => (
           <motion.span key={idx} variants={fadeUp}>
@@ -49,7 +51,7 @@ const FancyText: React.FC<{}> = () => {
           </motion.span>
         ))}
       </StyledMotionText>
-      <Box css={{ my: 'auto', maxWidth: '20rem' }}>
+      <Box css={{ my: 'auto', maxWidth: '20rem', textShadow: '$soft' }}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{

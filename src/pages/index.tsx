@@ -9,8 +9,10 @@ function Index() {
   return (
     <>
       <Box>
-        <Text h1>Recent Work</Text>
-        <Text>
+        <Text h1 font={'$cursive'} css={{ dropShadow: '$blur' }}>
+          Recent Work
+        </Text>
+        <Text font="$sansSerif" css={{ textShadow: '$soft' }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
           corrupti delectus deserunt saepe facere praesentium laborum, animi
           quos, quas recusandae perferendis nisi eum accusantium mollitia id

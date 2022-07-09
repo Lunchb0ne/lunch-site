@@ -8,7 +8,7 @@ export function Title() {
       <Flexbox gap="$lg">
         <FancyText />
       </Flexbox>
-      <Flexbox justifyContent="start" gap="$md">
+      <Flexbox justifyContent="start" gap="$md" css={{ dropShadow: '$blur' }}>
         <ConnectIcons />
       </Flexbox>
       <br />
