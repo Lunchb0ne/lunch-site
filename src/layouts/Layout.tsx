@@ -1,32 +1,37 @@
+import dynamic from 'next/dynamic';
 import { ReactNode } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Title } from '@/components/Title';
 import { Box, Flexbox } from '@/components/layout';
-import Gradients from '@/components/layout/Gradients';
 import { styled } from '@/lib/stitches';
 
 export interface Props {
   children: ReactNode;
 }
 
+const NosSSRGradients = dynamic(() => import('@/components/layout/Gradients'), {
+  ssr: false,
+});
+
 const MainContainer = styled(Box, {
-  as: 'main',
-  id: 'main-container',
-  mx: '5%',
+  mx: '8%',
   my: 'auto',
   '@initial': { mx: '5%' },
-  '@sm': { mx: '15%' },
+  '@sm': { mx: '18%' },
 });
 
 const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
   return (
-    <Flexbox id="app-container" flexDirection="column">
-      <Gradients />
-      <MainContainer>
-        <Title />
-        <AnimatePresence>{children}</AnimatePresence>
-      </MainContainer>
-    </Flexbox>
+    <>
+      <Flexbox id="app-container" flexDirection="column" justifyContent="start">
+        <MainContainer as="main" id="main-container">
+          <Title />
+          <AnimatePresence>{children}</AnimatePresence>
+        </MainContainer>
+      </Flexbox>
+      {/* Add those Cool gradients for bg */}
+      <NosSSRGradients />
+    </>
   );
 };
 

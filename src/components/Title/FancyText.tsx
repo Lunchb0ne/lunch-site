@@ -3,16 +3,16 @@ import { Text } from '@/components/elements';
 import { Box } from '@/components/layout';
 import { StyledMotionText } from './Styles';
 
-const FancyText = () => {
+const FancyText: React.FC<{}> = () => {
   const NAME = ['Abhishek', 'Aryan'];
   const fadeUp = {
     hidden: {
       opacity: 0,
-      translateY: '40px',
+      y: '40px',
     },
     show: {
       opacity: 1,
-      translateY: '0px',
+      y: '0px',
       transition: {
         type: 'spring',
         staggerChildren: 0.1,

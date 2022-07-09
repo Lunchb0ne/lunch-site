@@ -150,6 +150,7 @@ export const applyGlobalCSS = globalCss({
   body: { height: '100dvh' },
   '#__next': { height: '100vh' },
   '#__next > span > div': { minHeight: '100%' },
+  '#__next > div': { minHeight: '100%' },
 });
 
 export const StyledComponent = styled('div');
