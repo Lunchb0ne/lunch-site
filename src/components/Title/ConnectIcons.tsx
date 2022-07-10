@@ -12,7 +12,7 @@ const ConnectIcons: React.FC<Props> = (props) => {
       },
       hover: {
         scale: 1.05,
-        background: 'var(--colors-grayA12)',
+        background: 'var(--colors-fgMain)',
         transition: {
           type: 'spring',
           bounce: 0.2,
@@ -98,7 +98,7 @@ const ConnectIcons: React.FC<Props> = (props) => {
           className="icon icon-tabler icon-tabler-brand-github"
           viewBox="0 0 24 24"
           strokeWidth="2"
-          stroke="var(--colors-gray12)"
+          stroke="var(--colors-fgMain)"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -127,7 +127,7 @@ const ConnectIcons: React.FC<Props> = (props) => {
           className="icon icon-tabler icon-tabler-brand-linkedin"
           viewBox="0 0 24 24"
           strokeWidth="2"
-          stroke="var(--colors-gray12)"
+          stroke="var(--colors-fgMain)"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -185,7 +185,7 @@ const ConnectIcons: React.FC<Props> = (props) => {
           className="icon icon-tabler icon-tabler-brand-github"
           viewBox="0 0 24 24"
           strokeWidth="2"
-          stroke="var(--colors-gray12)"
+          stroke="var(--colors-fgMain)"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"

@@ -104,6 +104,7 @@ export const commonTokens = {
     pill: '9999px',
   },
   zIndices: {
+    neg: '-100',
     1: '100',
     2: '200',
     3: '300',

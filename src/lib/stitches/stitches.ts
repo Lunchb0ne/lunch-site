@@ -8,8 +8,17 @@ import {
   createStitches,
 } from '@stitches/react';
 import { motion } from 'framer-motion';
-import { commonTokens, mediaBreakpoints } from '@/config/commonTokens';
-import { DropShadow, DropShadows, lg, sm, soft } from '@/config/shadows';
+import {
+  commonTokens,
+  mediaBreakpoints,
+} from '@/lib/stitches/tokens/commonTokens';
+import {
+  DropShadow,
+  DropShadows,
+  lg,
+  sm,
+  soft,
+} from '@/lib/stitches/tokens/shadows';
 
 export type CSS = StitchesCSS<typeof config>;
 
@@ -148,7 +157,12 @@ export const applyGlobalCSS = globalCss({
     { fontFamily: 'Migur', src: "url('/fonts/Migur.otf')" },
     { fontFamily: 'SaintGeorge', src: "url('/fonts/SaintGeorge.ttf')" },
   ],
-  html: { bgColor: '$gray1', color: '$gray12' },
+
+  html: {
+    bgColor: '$bgMain',
+    color: '$fgMain',
+    '-webkit-font-smoothing': 'antialiased',
+  },
   body: { height: '100dvh' },
   '#__next': { height: '100vh' },
   '#__next > span > div': { minHeight: '100%' },

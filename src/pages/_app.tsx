@@ -10,7 +10,7 @@ import Inspect from 'inspx';
 import { ThemeProvider } from 'next-themes';
 import NProgress from 'nprogress';
 import { Head } from '@/components/next';
-import { dark, light } from '@/config/themes';
+import { dark, light } from '@/lib/stitches/themes';
 
 //Binding events.
 Router.events.on('routeChangeStart', () => NProgress.start());

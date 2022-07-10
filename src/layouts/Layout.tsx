@@ -23,7 +23,12 @@ const MainContainer = styled(Box, {
 const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
   return (
     <>
-      <Flexbox id="app-container" flexDirection="column" justifyContent="start">
+      <Flexbox
+        id="app-container"
+        flexDirection="column"
+        justifyContent="start"
+        css={{ overflowY: 'hidden' }}
+      >
         <MainContainer as="main" id="main-container">
           <Title />
           <AnimatePresence>{children}</AnimatePresence>

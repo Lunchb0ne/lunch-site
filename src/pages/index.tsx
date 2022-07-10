@@ -1,5 +1,5 @@
 import { useTheme } from 'next-themes';
-import { Card } from '@/components/Dragger';
+import Dragger from '@/components/Dragger/Dragger';
 import { Button, Text } from '@/components/elements';
 import { Box } from '@/components/layout';
 import { getLayout } from '@/layouts/Layout';
@@ -10,65 +10,29 @@ function Index() {
     <>
       <Box>
         <Text h1 font={'$cursive'} css={{ dropShadow: '$blur' }}>
-          Recent Work
+          Tech I Like
         </Text>
-        <Text font="$sansSerif" css={{ textShadow: '$soft' }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-          corrupti delectus deserunt saepe facere praesentium laborum, animi
-          quos, quas recusandae perferendis nisi eum accusantium mollitia id
-          doloremque. Commodi, voluptas earum!
-        </Text>
-        {Array(8).map((_, idx) => (
-          <Card key={idx} />
-        ))}
-        {/* <motion.div ref={constraints}>
-          <motion.div drag dragConstraints={constraints}>
-            <Image
-              src={'/hero/nextjs.svg'}
-              width={100}
-              height={100}
-              draggable="false"
-              alt="Nextjs Logo"
-            />
-          </motion.div>
-          <motion.div drag dragConstraints={constraints}>
-            <Image
-              src={'/hero/graphql.svg'}
-              width={100}
-              height={100}
-              draggable="false"
-              alt="Nextjs Logo"
-            />
-          </motion.div>
-          <motion.div drag dragConstraints={constraints}>
-            <Image
-              src={'/hero/nuxtjs.svg'}
-              width={100}
-              height={100}
-              draggable="false"
-              alt="Nextjs Logo"
-            />
-          </motion.div>
-          <motion.div drag dragConstraints={constraints}>
-            <Image
-              src={'/hero/react.svg'}
-              width={100}
-              height={100}
-              draggable="false"
-              alt="Nextjs Logo"
-            />
-          </motion.div>
-          <motion.div drag dragConstraints={constraints}>
-            <Image
-              src={'/hero/vue.svg'}
-              width={100}
-              height={100}
-              draggable="false"
-              alt="Nextjs Logo"
-            />
-          </motion.div>
-        </motion.div> */}
+        <hr />
+        <Dragger />
       </Box>
+      <Text>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore harum,
+        numquam esse incidunt recusandae dolorum alias quibusdam dicta magni
+        laudantium provident, fuga quam eveniet cum aliquam maiores sint
+        repellendus illum!
+      </Text>
+      <Text>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente non
+        facilis rerum recusandae? Cum aliquid dolorem dolores illum at quas
+        officia corrupti expedita, illo recusandae impedit iusto tempora,
+        asperiores repudiandae?
+      </Text>
+      <Text>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
+        voluptatibus necessitatibus recusandae, est dolorem nihil esse obcaecati
+        fugiat aliquid veniam consequuntur amet iusto laborum molestias
+        aspernatur eligendi nemo dolore magnam.
+      </Text>
       <Button
         outline
         onClick={() => {
