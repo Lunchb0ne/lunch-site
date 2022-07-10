@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import Dragger from 'react-physics-dragger';
 import { Card } from './Card';
 
 const DraggerComp = () => {
+  const [disableDragger, setDisableDragger] = useState(false);
   const tech = [
     '/hero/react.svg',
     '/hero/nextjs.svg',
@@ -20,10 +22,12 @@ const DraggerComp = () => {
           marginBottom: '2rem',
           paddingTop: '2rem',
           paddingBottom: '2rem',
+          zIndex: '2',
         }}
+        disabled={disableDragger}
       >
         {tech.map((item, i) => (
-          <Card key={`${i}`} Icon={item} />
+          <Card key={`${i}`} Icon={item} stateHandlers={setDisableDragger} />
         ))}
       </Dragger>
     </section>

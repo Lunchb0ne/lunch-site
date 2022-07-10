@@ -163,11 +163,12 @@ export const applyGlobalCSS = globalCss({
     color: '$fgMain',
     '-webkit-font-smoothing': 'antialiased',
   },
+
   body: { height: '100dvh' },
-  '#__next': { height: '100vh' },
-  '#__next > span > div': { minHeight: '100%' },
-  '#__next > div': { minHeight: '100%' },
+  '#__next': { minHeight: '100%' },
+  // Also hide X Overflows on the ful body
+  '#__next > span > div': { minHeight: '100%', overflowX: 'hidden' },
+  '#__next > div': { minHeight: '100%', overflowX: 'hidden' },
 });
 
 export const StyledComponent = styled('div');
-export const StyledMotion = styled(motion.div);
