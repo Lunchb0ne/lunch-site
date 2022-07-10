@@ -3,6 +3,7 @@ import { Text } from '@/components/elements';
 import { Box } from '@/components/layout';
 import { StyledMotionText } from './Styles';
 
+// TODO: Cleanup this animation
 const FancyText: React.FC<{}> = () => {
   const NAME = ['Abhishek', 'Aryan'];
   const fadeUp: MotionProps['variants'] = {
@@ -19,8 +20,7 @@ const FancyText: React.FC<{}> = () => {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
-        staggerChildren: 0.4,
+        staggerChildren: 1,
       },
     },
     hover: {
@@ -33,12 +33,13 @@ const FancyText: React.FC<{}> = () => {
     },
   };
   return (
-    <LayoutGroup>
+    <>
+      {/* TODO: Move this into it's own FadeUp thing */}
       <StyledMotionText
         drag
         variants={fadeUp}
         whileHover={'hover'}
-        dragConstraints={{ left: 5, right: 5, bottom: 2, top: 2 }}
+        dragConstraints={{ bottom: 0, top: 0, left: 0, right: 0 }}
         initial="hidden"
         animate="show"
         css={{
@@ -46,9 +47,7 @@ const FancyText: React.FC<{}> = () => {
         }}
       >
         {NAME.map((word, idx) => (
-          <motion.span key={idx} variants={fadeUp}>
-            {word}&nbsp;
-          </motion.span>
+          <motion.span key={idx}>{word}&nbsp;</motion.span>
         ))}
       </StyledMotionText>
       <Box css={{ my: 'auto', maxWidth: '20rem', textShadow: '$soft' }}>
@@ -66,7 +65,7 @@ const FancyText: React.FC<{}> = () => {
           </Text>
         </motion.div>
       </Box>
-    </LayoutGroup>
+    </>
   );
 };
 export default FancyText;

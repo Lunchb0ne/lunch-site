@@ -7,7 +7,6 @@ import {
   CSS as StitchesCSS,
   createStitches,
 } from '@stitches/react';
-import { motion } from 'framer-motion';
 import {
   commonTokens,
   mediaBreakpoints,

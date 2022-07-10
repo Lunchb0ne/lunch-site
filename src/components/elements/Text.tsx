@@ -1,7 +1,7 @@
 import { SetEntry } from 'type-fest/source/entry';
 import { ComponentProps, ElementType, ForwardedRef, forwardRef } from 'react';
 import { BoxProps } from '@/components/layout';
-import { CSS, StyledComponent, StyledMotion } from '@/lib/stitches';
+import { CSS, StyledComponent } from '@/lib/stitches';
 
 const HTMLTextTags = new Set([
   'p',
