@@ -16,6 +16,7 @@ const NosSSRGradients = dynamic(() => import('@/components/layout/Gradients'), {
 const MainContainer = styled(Box, {
   mx: '8%',
   my: 'auto',
+  mt: '5%',
   '@initial': { mx: '5%' },
   '@sm': { mx: '18%' },
 });
@@ -23,6 +24,8 @@ const MainContainer = styled(Box, {
 const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
   return (
     <>
+      {/* Add those Cool gradients for bg */}
+      <NosSSRGradients />
       <Flexbox
         id="app-container"
         flexDirection="column"
@@ -34,8 +37,6 @@ const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
           <AnimatePresence>{children}</AnimatePresence>
         </MainContainer>
       </Flexbox>
-      {/* Add those Cool gradients for bg */}
-      <NosSSRGradients />
     </>
   );
 };

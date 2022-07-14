@@ -17,29 +17,29 @@ export const Card: React.FC<Props> = ({ Icon, stateHandlers }) => {
         {/* Temp Change to make it okay */}
         {Icon[0] === '/' ? (
           <Box
-            drag
             dragConstraints={dragRef}
             as={motion.img}
             src={Icon}
-            onDragStart={() => {
-              stateHandlers(true);
-            }}
-            onDragEnd={() => {
-              stateHandlers(false);
-            }}
+            // drag
+            // onDragStart={() => {
+            //   stateHandlers(true);
+            // }}
+            // onDragEnd={() => {
+            //   stateHandlers(false);
+            // }}
             css={{ height: '6rem', m: 'auto', color: '$fgMain' }}
           />
         ) : (
           <Text
             as={motion.h1}
-            onDragStart={() => {
-              stateHandlers(true);
-            }}
-            onDragEnd={() => {
-              stateHandlers(false);
-            }}
-            drag
-            dragConstraints={dragRef}
+            // onDragStart={() => {
+            //   stateHandlers(true);
+            // }}
+            // onDragEnd={() => {
+            //   stateHandlers(false);
+            // }}
+            // drag
+            // dragConstraints={dragRef}
             css={{ height: '6rem', m: 'auto', color: '$fgMain' }}
           >
             {Icon}

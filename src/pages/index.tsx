@@ -1,5 +1,5 @@
 import { useTheme } from 'next-themes';
-import Dragger from '@/components/Dragger/Dragger';
+import Dragger from '@/components/Dragger/dragger';
 import { Button, Text } from '@/components/elements';
 import { Box } from '@/components/layout';
 import { getLayout } from '@/layouts/Layout';

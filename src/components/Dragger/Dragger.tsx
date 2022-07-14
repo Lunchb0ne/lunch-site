@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Dragger from 'react-physics-dragger';
-import { Card } from './Card';
+import { Card } from './card';
 
 const DraggerComp = () => {
   const [disableDragger, setDisableDragger] = useState(false);
