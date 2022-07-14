@@ -180,7 +180,7 @@ const ConnectIcons: React.FC<Props> = (props) => {
         <motion.svg
           width={iconDim}
           height={iconDim}
-          // variants={anims.svgAnims}
+          variants={anims.svgAnims}
           xmlns="http://www.w3.org/2000/svg"
           className="icon icon-tabler icon-tabler-brand-github"
           viewBox="0 0 24 24"
@@ -192,14 +192,14 @@ const ConnectIcons: React.FC<Props> = (props) => {
         >
           <motion.path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <motion.rect
-            // variants={anims.pathAnims}
+            variants={anims.pathAnims}
             x={3}
             y={5}
             width={18}
             height={14}
             rx={2}
           />
-          {/* <motion.polyline variants={anims.pathAnims} points="3 7 12 13 21 7" /> */}
+          <motion.polyline variants={anims.pathAnims} points="3 7 12 13 21 7" />
         </motion.svg>
       </Button>
     </>

@@ -1,64 +1,41 @@
-import { LayoutGroup, MotionProps, motion } from 'framer-motion';
+import SlideUp from '../animations/slideUp';
+import { MotionProps, motion } from 'framer-motion';
 import { Text } from '@/components/elements';
 import { Box } from '@/components/layout';
 import { StyledMotionText } from './Styles';
 
 // TODO: Cleanup this animation
 const FancyText: React.FC<{}> = () => {
-  const NAME = ['Abhishek', 'Aryan'];
   const fadeUp: MotionProps['variants'] = {
-    hidden: {
+    init: {
       opacity: 0,
       y: 50,
     },
-    normal: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-    },
     show: {
-      opacity: 1,
-      y: 0,
+      opacity: [null, 1, 1],
+      y: [null, -5, 0],
       transition: {
-        staggerChildren: 1,
+        bounce: 1,
+        type: 'spring',
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
     hover: {
-      y: 6,
-      transition: {
-        repeatType: 'reverse',
-        repeat: Infinity,
-        type: 'spring',
-      },
+      y: [null, 6],
+      transition: { repeatType: 'reverse', repeat: Infinity, type: 'spring' },
     },
   };
   return (
     <>
-      {/* TODO: Move this into it's own FadeUp thing */}
-      <StyledMotionText
-        drag
-        variants={fadeUp}
-        whileHover={'hover'}
-        dragConstraints={{ bottom: 0, top: 0, left: 0, right: 0 }}
-        initial="hidden"
-        animate="show"
-        css={{
-          dropShadow: '$blur',
-        }}
-      >
-        {NAME.map((word, idx) => (
-          <motion.span key={idx}>{word}&nbsp;</motion.span>
-        ))}
-      </StyledMotionText>
+      <SlideUp variants={fadeUp}>
+        <motion.div variants={fadeUp}>Abhishek</motion.div>
+        <motion.div variants={fadeUp}>Aryan</motion.div>
+      </SlideUp>
       <Box css={{ my: 'auto', maxWidth: '20rem', textShadow: '$soft' }}>
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: {
-              delay: 0.5,
-            },
-          }}
+          animate={{ opacity: 1, transition: { delay: 0.5 } }}
         >
           <Text h4 font="$sans">
             Making software is my hobby, but breaking it is my expertise.

@@ -46,6 +46,7 @@ const Gradients: React.FC<{}> = () => {
         <StyledImage
           src={isDark ? leftGradientDark : leftGradientLight}
           alt={`gradient ${isDark ? 'blue' : 'orange'} background`}
+          priority
           css={{
             display: 'block',
             opacity: 0,

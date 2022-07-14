@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 import { ReactNode } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { Title } from '@/components/Title';
 import { Box, Flexbox } from '@/components/layout';
 import { styled } from '@/lib/stitches';
@@ -34,7 +33,7 @@ const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
       >
         <MainContainer as="main" id="main-container">
           <Title />
-          <AnimatePresence>{children}</AnimatePresence>
+          {children}
         </MainContainer>
       </Flexbox>
     </>
