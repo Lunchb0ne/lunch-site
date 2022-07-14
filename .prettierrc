@@ -1,0 +1,18 @@
+
+{
+  "singleQuote": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderGroupNamespaceSpecifiers": true,
+  "importOrder": [
+    "^(.*)[.]css$",
+    "^(.*)[.]scss$",
+    "^type-fest([/].*)?$",
+    "^(.*)types(.*)$",
+    "^next([/].*)?$",
+    "^react$",
+    "^react-dom$",
+    "<THIRD_PARTY_MODULES>",
+    "^@[/](.*)$",
+    "^[.][/](.*)$"
+  ]
+}
