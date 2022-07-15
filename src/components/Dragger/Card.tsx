@@ -1,50 +1,32 @@
-import React, { Children, Dispatch, SetStateAction, useRef } from 'react';
+import React, { Dispatch, ReactNode, SetStateAction, useRef } from 'react';
 import { Box, Flexbox } from '../layout';
 import { motion } from 'framer-motion';
-import { Text } from '@/components/elements';
 import { StyledCard } from './styles';
 
 type Props = {
-  Icon: string;
+  children?: ReactNode;
   stateHandlers: Dispatch<SetStateAction<boolean>>;
 };
 
-export const Card: React.FC<Props> = ({ Icon, stateHandlers }) => {
+export const Card: React.FC<Props> = ({ children, stateHandlers }) => {
   const dragRef = useRef(null);
   return (
     <StyledCard>
       <Flexbox ref={dragRef} justifyContent css={{ height: '100%' }}>
-        {/* Temp Change to make it okay */}
-        {Icon[0] === '/' ? (
-          <Box
-            dragConstraints={dragRef}
-            as={motion.img}
-            src={Icon}
-            // drag
-            // onDragStart={() => {
-            //   stateHandlers(true);
-            // }}
-            // onDragEnd={() => {
-            //   stateHandlers(false);
-            // }}
-            css={{ height: '6rem', m: 'auto', color: '$fgMain' }}
-          />
-        ) : (
-          <Text
-            as={motion.h1}
-            // onDragStart={() => {
-            //   stateHandlers(true);
-            // }}
-            // onDragEnd={() => {
-            //   stateHandlers(false);
-            // }}
-            // drag
-            // dragConstraints={dragRef}
-            css={{ height: '6rem', m: 'auto', color: '$fgMain' }}
-          >
-            {Icon}
-          </Text>
-        )}
+        <Box
+          dragConstraints={dragRef}
+          as={motion.div}
+          drag
+          onDragStart={() => {
+            stateHandlers(true);
+          }}
+          onDragEnd={() => {
+            stateHandlers(false);
+          }}
+          css={{ size: 'auto', m: 'auto', color: '$fgMain' }}
+        >
+          {children}
+        </Box>
       </Flexbox>
     </StyledCard>
   );

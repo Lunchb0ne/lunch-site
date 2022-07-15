@@ -34,6 +34,7 @@ const FancyText: React.FC<{}> = () => {
       </SlideUp>
       <Box css={{ my: 'auto', maxWidth: '20rem', textShadow: '$soft' }}>
         <motion.div
+          layoutId="SubText"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 0.5 } }}
         >
