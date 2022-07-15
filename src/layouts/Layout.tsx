@@ -18,9 +18,9 @@ const NosSSRToggle = dynamic(() => import('@/components/next/ThemeToggle'), {
 
 const MainContainer = styled(Box, {
   my: 'auto',
-  mt: '5%',
+  pt: '5%',
   mx: '10%',
-  '@smMax': { mx: '6%' },
+  '@smMax': { pt: '1%', mx: '6%' },
 });
 
 const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {

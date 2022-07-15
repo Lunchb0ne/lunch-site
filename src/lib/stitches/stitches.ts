@@ -163,7 +163,7 @@ export const applyGlobalCSS = globalCss({
     '-webkit-font-smoothing': 'antialiased',
   },
 
-  // body: { height: '100dvh' },
+  body: { height: '100dvh' },
   '#__next': { minHeight: '100%' },
   // Also hide X Overflows on the ful body
   '#__next > span > div': { minHeight: '100%', overflowX: 'hidden' },

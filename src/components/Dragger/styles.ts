@@ -3,7 +3,7 @@ import { styled } from '@/lib/stitches';
 export const StyledCard = styled('div', {
   overflow: 'hidden',
   width: '12rem',
-  height: '20rem',
+  height: '18rem',
   display: 'inline-block',
   border: '2px solid #333',
   borderRadius: '40px',

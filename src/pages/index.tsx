@@ -9,9 +9,17 @@ function Index() {
     <>
       <Box>
         <Text
-          h3
+          h4
           font="$sans"
-          css={{ textShadow: '$soft', mr: '15%', mt: 0, mb: '5%' }}
+          css={{
+            textShadow: '$soft',
+            mr: '15%',
+            '@smMax': {
+              mr: '5%',
+            },
+            mt: 0,
+            mb: '5%',
+          }}
         >
           Hello! ¡Holá! Bonjour!
           <br />

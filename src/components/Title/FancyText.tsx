@@ -38,7 +38,7 @@ const FancyText: React.FC<{}> = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 0.5 } }}
         >
-          <Text h4 font="$sans">
+          <Text h4 font="$sans" css={{ textShadow: '$soft' }}>
             Making software is my hobby, but breaking it is my expertise.
           </Text>
         </motion.div>
