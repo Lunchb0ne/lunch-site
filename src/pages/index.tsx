@@ -8,7 +8,19 @@ function Index() {
   return (
     <>
       <Box>
-        <Text h3 css={{ textShadow: '$soft', mr: '15%' }}>
+        <Text
+          h4
+          font="$sans"
+          css={{
+            textShadow: '$soft',
+            mr: '15%',
+            '@smMax': {
+              mr: '5%',
+            },
+            mt: 0,
+            mb: '5%',
+          }}
+        >
           Hello! ¡Holá! Bonjour!
           <br />
           I&apos;m Abhishek, a Dublin based Software Developement Engineer.

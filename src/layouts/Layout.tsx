@@ -12,12 +12,15 @@ const NosSSRGradients = dynamic(() => import('@/components/layout/Gradients'), {
   ssr: false,
 });
 
+const NosSSRToggle = dynamic(() => import('@/components/next/ThemeToggle'), {
+  ssr: false,
+});
+
 const MainContainer = styled(Box, {
-  mx: '8%',
   my: 'auto',
-  mt: '5%',
-  '@initial': { mx: '5%' },
-  '@sm': { mx: '18%' },
+  pt: '5%',
+  mx: '10%',
+  '@smMax': { pt: '1%', mx: '6%' },
 });
 
 const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
@@ -25,6 +28,9 @@ const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
     <>
       {/* Add those Cool gradients for bg */}
       <NosSSRGradients />
+      {/* A Floating theme switcher */}
+      <NosSSRToggle />
+      {/* Main App container */}
       <Flexbox
         id="app-container"
         flexDirection="column"

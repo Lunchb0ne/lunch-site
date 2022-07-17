@@ -8,7 +8,6 @@ export const StyledMotionText = styled(motion.h1, {
   fontFamily: 'Righteous',
 });
 
-// TODO: Make this a common slide up thingy for all slideUps
 type Props = {
   children: React.ReactNode;
   variants?: MotionProps['variants'];

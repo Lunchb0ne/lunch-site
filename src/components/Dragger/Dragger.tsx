@@ -1,20 +1,18 @@
 import { useState } from 'react';
 import Dragger from 'react-physics-dragger';
 import { Card } from './Card';
+import {
+  GraphqlIcon,
+  NextIcon,
+  PythonIcon,
+  ReactIcon,
+  RustIcon,
+  SvelteIcon,
+} from './icons';
 
 const DraggerComp = () => {
   const [disableDragger, setDisableDragger] = useState(false);
-  const tech = [
-    '/hero/react.svg',
-    '/hero/nextjs.svg',
-    'Solid',
-    '/hero/vue.svg',
-    'Svelte',
-    'C++',
-    'Rust',
-    '/hero/nuxtjs.svg',
-    '/hero/graphql.svg',
-  ];
+
   return (
     <section className="section">
       <Dragger
@@ -26,9 +24,24 @@ const DraggerComp = () => {
         }}
         disabled={disableDragger}
       >
-        {tech.map((item, i) => (
-          <Card key={`${i}`} Icon={item} stateHandlers={setDisableDragger} />
-        ))}
+        <Card stateHandlers={setDisableDragger}>
+          <ReactIcon />
+        </Card>
+        <Card stateHandlers={setDisableDragger}>
+          <NextIcon />
+        </Card>
+        <Card stateHandlers={setDisableDragger}>
+          <RustIcon />
+        </Card>
+        <Card stateHandlers={setDisableDragger}>
+          <GraphqlIcon />
+        </Card>
+        <Card stateHandlers={setDisableDragger}>
+          <SvelteIcon />
+        </Card>
+        <Card stateHandlers={setDisableDragger}>
+          <PythonIcon />
+        </Card>
       </Dragger>
     </section>
   );
