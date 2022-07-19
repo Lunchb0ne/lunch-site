@@ -22,7 +22,7 @@ const FancyText: React.FC<{}> = () => {
     },
     hover: {
       y: [null, 6],
-      transition: { repeatType: 'reverse', repeat: Infinity, type: 'spring' },
+      transition: { repeatType: 'reverse', type: 'spring' },
     },
   };
   return (
