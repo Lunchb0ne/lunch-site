@@ -1,8 +1,7 @@
-import SlideUp from '../animations/slideUp';
-import { MotionProps, motion } from 'framer-motion';
 import { Text } from '@/components/elements';
 import { Box } from '@/components/layout';
-import { StyledMotionText } from './Styles';
+import { motion, MotionProps } from 'framer-motion';
+import SlideUp from '@/components/animations/slideUp';
 
 // TODO: Cleanup this animation
 const FancyText: React.FC<{}> = () => {
@@ -23,12 +22,12 @@ const FancyText: React.FC<{}> = () => {
     },
     hover: {
       y: [null, 6],
-      transition: { repeatType: 'reverse', repeat: Infinity, type: 'spring' },
+      transition: { repeatType: 'reverse', type: 'spring' },
     },
   };
   return (
     <>
-      <SlideUp variants={fadeUp}>
+      <SlideUp variants={fadeUp} allowDrag>
         <motion.div variants={fadeUp}>Abhishek</motion.div>
         <motion.div variants={fadeUp}>Aryan</motion.div>
       </SlideUp>

@@ -23,6 +23,7 @@ function Index() {
         >
           Hello! ¡Holá! Bonjour!
           <br />
+          <br />
           I&apos;m Abhishek, a Dublin based Software Developement Engineer.
           Exploring and working on the Edge (quite literally) of Typescript,
           React, Solid and Svelte.
@@ -30,6 +31,34 @@ function Index() {
         <SlideUp>Tech I Use</SlideUp>
         <hr />
         <DraggerComp />
+        <SlideUp>Some Things I Wrote</SlideUp>
+        <hr />
+        <Text h4 font="$sans">
+          <ul>
+            <li>
+              <a
+                href="https://vdlms.lunchb0ne.me"
+                rel="noreferrer"
+                target="_blank"
+              >
+                OnFlix
+              </a>
+            </li>
+            I Just wanted a reason to mess around with Nuxt and Vue, It turned
+            out pretty good. Firebase + Nuxt is a great DX!
+            <li>
+              <a
+                href="https://bad-day.lunchb0ne.me"
+                rel="noreferrer"
+                target="_blank"
+              >
+                I&apos;m Having a Really Really Bad Day
+              </a>
+            </li>
+            This was me making an excuse just to look at cat pics and hack
+            around in SolidJS
+          </ul>
+        </Text>
       </Box>
     </>
   );

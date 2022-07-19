@@ -19,6 +19,7 @@ const ThemeToggle: FC<ThemeToggleProps> = () => {
         setTheme(theme === 'light' ? 'dark' : 'light');
       }}
       css={{
+        lineHeight: 'unset',
         width: '3em',
         height: '3em',
         borderRadius: '$rounded',

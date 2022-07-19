@@ -2,7 +2,7 @@ import NextHead from 'next/head';
 
 export const Head = ({
   title = 'Abhishek Aryan | Personal Portfolio',
-  description = '...',
+  description = 'Where the sphagetti gets made...',
 }: {
   title?: string;
   description?: string;
