@@ -23,6 +23,7 @@ function Index() {
         >
           Hello! ¡Holá! Bonjour!
           <br />
+          <br />
           I&apos;m Abhishek, a Dublin based Software Developement Engineer.
           Exploring and working on the Edge (quite literally) of Typescript,
           React, Solid and Svelte.

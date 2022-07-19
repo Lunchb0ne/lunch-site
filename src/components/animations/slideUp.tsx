@@ -11,6 +11,7 @@ export const StyledMotionText = styled(motion.h1, {
 type Props = {
   children: React.ReactNode;
   variants?: MotionProps['variants'];
+  allowDrag?: boolean;
 };
 
 const fadeUp: MotionProps['variants'] = {
@@ -34,18 +35,22 @@ const fadeUp: MotionProps['variants'] = {
   },
 };
 
-const SlideUp: React.FC<Props> = ({ children, variants = fadeUp }) => {
+const SlideUp: React.FC<Props> = ({
+  children,
+  variants = fadeUp,
+  allowDrag = false,
+}) => {
   return (
     <>
       <StyledMotionText
-        drag
+        drag={allowDrag}
         variants={variants}
         whileHover="hover"
         dragConstraints={{ bottom: 0, top: 0, left: 0, right: 0 }}
         initial="init"
         animate="show"
         css={{
-          dropShadow: '$blur',
+          dropShadow: '$lg',
         }}
       >
         {children}

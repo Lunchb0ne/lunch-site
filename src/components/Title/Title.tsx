@@ -18,7 +18,7 @@ export function Title() {
       >
         <FancyText />
       </Flexbox>
-      <Flexbox justifyContent="start" gap="$md" css={{ dropShadow: '$blur' }}>
+      <Flexbox justifyContent="start" gap="$md">
         <ConnectIcons />
       </Flexbox>
       <br />
