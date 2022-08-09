@@ -1,7 +1,8 @@
 // https://stitches.dev/docs/server-side-rendering
 // https://nextjs.org/docs/advanced-features/react-18/server-components#nextdocument
 import { Head, Html, Main, NextScript } from 'next/document';
-import { applyGlobalCSS, getCssText } from '@/lib/stitches';
+
+import { applyGlobalCSS, getCssText, reset } from '@/lib/stitches';
 
 const sanitizeCSS = [
   'npm/sanitize.css@latest/sanitize.min.css',
@@ -11,6 +12,13 @@ const sanitizeCSS = [
   'npm/sanitize.css@latest/assets.min.css',
   'npm/sanitize.css@latest/forms.min.css',
 ].join(',');
+
+// Reset Accumulated SSR styles
+const getCssAndReset = () => {
+  const css = getCssText();
+  reset();
+  return css;
+};
 
 export default function Document() {
   applyGlobalCSS();
@@ -29,7 +37,7 @@ export default function Document() {
         />
         <style
           id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
+          dangerouslySetInnerHTML={{ __html: getCssAndReset() }}
         />
       </Head>
       <body>

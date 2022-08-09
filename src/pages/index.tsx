@@ -1,4 +1,3 @@
-import DraggerComp from '@/components/Dragger/Dragger';
 import SlideUp from '@/components/animations/slideUp';
 import { Text } from '@/components/elements';
 import { Box } from '@/components/layout';
@@ -30,7 +29,7 @@ function Index() {
         </Text>
         <SlideUp>Tech I Use</SlideUp>
         <hr />
-        <DraggerComp />
+        {/* <DraggerComp /> */}
         <SlideUp>Some Things I Wrote</SlideUp>
         <hr />
         <Text h4 font="$sans">

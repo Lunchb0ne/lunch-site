@@ -1,11 +1,14 @@
 import { useMemo } from 'react';
+
 import { useTheme } from 'next-themes';
 import leftGradientDark from 'public/gradient/gradient-left-dark.svg';
 import leftGradientLight from 'public/gradient/gradient-left-light.svg';
 import rightGradientDark from 'public/gradient/gradient-right-dark.svg';
 import rightGradientLight from 'public/gradient/gradient-right-light.svg';
+
 import { StyledImage } from '@/components/elements/Image';
 import { appears } from '@/lib/utils/animations';
+
 import { Box } from './Box';
 
 const Gradients: React.FC<{}> = () => {

@@ -1,4 +1,5 @@
-import { motion, MotionProps } from 'framer-motion';
+import { MotionProps, motion } from 'framer-motion';
+
 import { ConnectAnchor } from './Styles';
 
 type Props = {};

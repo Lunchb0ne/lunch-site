@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { MotionProps, motion } from 'framer-motion';
+
 import { styled } from '@/lib/stitches';
 
 export const StyledMotionText = styled(motion.h1, {

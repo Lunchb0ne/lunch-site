@@ -1,7 +1,9 @@
 import { ComponentProps, ElementType, ForwardedRef, forwardRef } from 'react';
-import { BoxProps } from '@/components/layout';
-import { CSS, StyledComponent } from '@/lib/stitches';
 
+import { BoxProps } from '@/components/layout';
+import { CSS, styled } from '@/lib/stitches';
+
+const StyledComponent = styled('div');
 interface GridProps {
   paddingBlock?: CSS['paddingBlock'] | boolean;
   gap?: CSS['gap'] | boolean;

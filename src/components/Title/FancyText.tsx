@@ -1,7 +1,8 @@
+import { MotionProps, motion } from 'framer-motion';
+
+import SlideUp from '@/components/animations/slideUp';
 import { Text } from '@/components/elements';
 import { Box } from '@/components/layout';
-import { motion, MotionProps } from 'framer-motion';
-import SlideUp from '@/components/animations/slideUp';
 
 // TODO: Cleanup this animation
 const FancyText: React.FC<{}> = () => {

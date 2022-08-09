@@ -1,5 +1,7 @@
-import dynamic from 'next/dynamic';
 import { ReactNode } from 'react';
+
+import dynamic from 'next/dynamic';
+
 import { Title } from '@/components/Title';
 import { Box, Flexbox } from '@/components/layout';
 import { styled } from '@/lib/stitches';
@@ -38,7 +40,7 @@ const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
         css={{ overflowY: 'hidden' }}
       >
         <MainContainer as="main" id="main-container">
-          <Title />
+          {/* <Title /> */}
           {children}
         </MainContainer>
       </Flexbox>

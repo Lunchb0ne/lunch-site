@@ -1,5 +1,14 @@
 {
-  "editor.detectIndentation": true,
+  // Activate auto-formatting for all supported files
+  "editor.formatOnSave": true,
+  // Set Prettier as default formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Set Default indentation
   "editor.tabSize": 2,
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  // Fix ESLint errors on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    // "source.organizeImports": true,
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
 }

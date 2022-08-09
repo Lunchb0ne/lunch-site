@@ -1,6 +1,8 @@
 import { ComponentProps, ElementType, ForwardedRef, forwardRef } from 'react';
-import { CSS, StyledComponent } from '@/lib/stitches';
 
+import { CSS, styled } from '@/lib/stitches';
+
+const StyledComponent = styled('div');
 export interface BoxProps<T = 'div'> {
   as?: T;
   css?: CSS;
