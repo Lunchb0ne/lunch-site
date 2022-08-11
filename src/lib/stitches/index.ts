@@ -4,10 +4,10 @@ import { darkThemeColors, lightThemeColors } from './colors';
 import fonts from './fonts';
 import letterSpacings from './letterSpacings';
 import lineHeights from './lineHeights';
-import media from './media';
+import { breakpoints, media, mediaBreakpoints } from './media';
 import radii from './radii';
 import shadows from './shadows';
-import sizes from './sizes';
+import { sizes, zIndices } from './sizes';
 import utils from './utils';
 
 export const {
@@ -26,12 +26,17 @@ export const {
     fonts,
     letterSpacings,
     lineHeights,
+    zIndices,
     space: sizes,
     sizes,
     radii,
     shadows,
+    breakpoints,
   },
-  media,
+  media: {
+    ...media,
+    ...mediaBreakpoints,
+  },
   utils,
 });
 
@@ -46,17 +51,10 @@ export const applyGlobalCSS = globalCss({
     { fontFamily: 'SaintGeorge', src: "url('/fonts/SaintGeorge.ttf')" },
   ],
 
-  html: {
-    bgColor: '$bgMain',
-    color: '$fgMain',
-    maxHeight: '100vh',
-    '-webkit-font-smoothing': 'antialiased',
-  },
-  body: {
-    margin: 0,
-    padding: 0,
-    fontFamily: '$sansSerif',
-  },
+  html: { bgColor: '$bgMain', color: '$fgMain' },
+  body: { height: '100dvh', fontFamily: '$sans' },
+  '#__next': { height: '100vh' },
+  '#__next > div': { minHeight: '100%' },
 });
 
 export type CSS = StitchesCSS<typeof config>;

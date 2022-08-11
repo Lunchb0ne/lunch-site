@@ -1,3 +1,4 @@
+import { Title } from '@/components/Title';
 import SlideUp from '@/components/animations/slideUp';
 import { Text } from '@/components/elements';
 import { Box } from '@/components/layout';
@@ -7,11 +8,9 @@ function Index() {
   return (
     <>
       <Box>
+        <Title />
         <Text
-          h4
-          font="$sans"
           css={{
-            textShadow: '$soft',
             mr: '15%',
             '@smMax': {
               mr: '5%',

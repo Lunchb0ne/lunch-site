@@ -16,7 +16,13 @@ const Gradients: React.FC<{}> = () => {
   const isDark = useMemo(() => theme === 'dark', [theme]);
   return (
     <>
-      <Box id="gradients" css={{ zIndex: '-200', position: 'fixed' }}>
+      <Box
+        id="gradients"
+        css={{
+          zIndex: '-10',
+          position: 'fixed',
+        }}
+      >
         <StyledImage
           src={isDark ? rightGradientDark : rightGradientLight}
           alt={`gradient violet background`}

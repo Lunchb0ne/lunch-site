@@ -2,9 +2,10 @@
 //nprogress module
 import 'nprogress/nprogress.css';
 
-import { ReactElement } from 'react';
-
-import { NextComponentType, NextPageContext } from 'next';
+// Font Imports
+import '@fontsource/ibm-plex-serif';
+import '@fontsource/inter';
+// Other Imports
 import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import Router from 'next/router';

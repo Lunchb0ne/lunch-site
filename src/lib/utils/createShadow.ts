@@ -16,15 +16,15 @@ import transparentize from './transparentize';
  *
  * See Josh Comeau' blog post about [color matching shadows](https://www.joshwcomeau.com/css/designing-shadows/#color-matched-shadows) for more.
  *
- * @param size Three sizes are supported - 'small', 'medium' and 'large'
- * @param color Both theme colors (red500) and regular colors are supported (red or #123).
+ * @param size Four sizes are supported - 'soft', 'small', 'medium' and 'large'
+ * @param color Both theme colors (gray4) and regular colors are supported (red or #123).
  * @param opacityOverride Optional. While the colors will be made transparent by default, you can override the degree of transparency
  *
  * @example
  * // Usage
  * const Example = styled('div', {
  *  boxShadow: createShadow('small', '#123', 0.9), 
- *  boxShadow: createShadow('medium', 'green500'),
+ *  boxShadow: createShadow('medium', 'gray4'),
  * })
  * 
  * 
@@ -38,17 +38,23 @@ import transparentize from './transparentize';
  */
 
 const createShadow = (
-  size: 'small' | 'medium' | 'large',
-  color: keyof typeof colors | Color,
+  size: 'small' | 'medium' | 'large' | 'soft',
+  color: `${keyof typeof colors}` | Color,
   opacityOverride?: number
 ): string => {
   if (size === 'small') {
-    const opacity = opacityOverride ?? 0.7;
+    const opacity = opacityOverride ?? 0.47;
     const transparentColor = transparentize(color, opacity);
-    return `0 1px 1px ${transparentColor}`;
+    return [
+      `0 1px 1px ${transparentColor}`,
+      `0 2px 2px ${transparentColor}`,
+      `0 4px 4px ${transparentColor}`,
+      `0 6px 8px ${transparentColor}`,
+      `0 8px 16px ${transparentColor}`,
+    ].join(',');
   }
   if (size === 'medium') {
-    const opacity = opacityOverride ?? 0.333;
+    const opacity = opacityOverride ?? 0.31;
     const transparentColor = transparentize(color, opacity);
     return `
       0 2px 2px ${transparentColor},
@@ -59,13 +65,25 @@ const createShadow = (
   if (size === 'large') {
     const opacity = opacityOverride ?? 0.2;
     const transparentColor = transparentize(color, opacity);
-    return `
-    0 2px 2px ${transparentColor},
-    0 4px 4px ${transparentColor},
-    0 8px 8px ${transparentColor},
-    0 16px 16px ${transparentColor},
-    0 32px 32px ${transparentColor}
-  `;
+    return [
+      `0 2px 1px ${transparentColor}`,
+      `0 4px 2px ${transparentColor}`,
+      `0 8px 4px ${transparentColor}`,
+      `0 16px 8px ${transparentColor}`,
+      `0 32px 16px ${transparentColor}`,
+    ].join(',');
+  }
+  if (size === 'soft') {
+    const opacity = opacityOverride ?? 0.1;
+    const transparentColor = transparentize(color, opacity);
+    return [
+      `0 1px 2px ${transparentColor}`,
+      `0 2px 4px ${transparentColor}`,
+      `0 4px 8px ${transparentColor}`,
+      `0 8px 16px ${transparentColor}`,
+      `0 16px 32px ${transparentColor}`,
+      `0 32px 64px ${transparentColor}`,
+    ].join(',');
   }
   throw new Error(`createShadow: ${size} is not an accepted size`);
 };

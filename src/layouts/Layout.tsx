@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 import dynamic from 'next/dynamic';
 
@@ -19,32 +19,33 @@ const NosSSRToggle = dynamic(() => import('@/components/next/ThemeToggle'), {
 });
 
 const MainContainer = styled(Box, {
-  my: 'auto',
-  pt: '5%',
-  mx: '10%',
-  '@smMax': { pt: '1%', mx: '6%' },
+  mx: 'auto',
+  maxWidth: 640,
+  '@xsMax': { mx: '5%' },
 });
 
+const BgWithDots = styled(Box, {
+  my: 'auto',
+  // TODO: Do this in Stitches
+  // backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E")`,
+  zIndex: '-20',
+});
 const Layout: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
   return (
-    <>
+    <BgWithDots>
       {/* Add those Cool gradients for bg */}
-      <NosSSRGradients />
+      <Suspense>
+        <NosSSRGradients />
+      </Suspense>
       {/* A Floating theme switcher */}
-      <NosSSRToggle />
+      <Suspense>
+        <NosSSRToggle />
+      </Suspense>
       {/* Main App container */}
-      <Flexbox
-        id="app-container"
-        flexDirection="column"
-        justifyContent="start"
-        css={{ overflowY: 'hidden' }}
-      >
-        <MainContainer as="main" id="main-container">
-          {/* <Title /> */}
-          {children}
-        </MainContainer>
-      </Flexbox>
-    </>
+      <MainContainer as="main" id="main-container">
+        {children}
+      </MainContainer>
+    </BgWithDots>
   );
 };
 

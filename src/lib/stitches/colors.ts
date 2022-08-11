@@ -1,4 +1,5 @@
 import {
+  blackA,
   blue,
   blueDark,
   gray,
@@ -8,6 +9,7 @@ import {
   mauve,
   red,
   redDark,
+  whiteA,
 } from '@radix-ui/colors';
 
 const lightThemeColors = {
@@ -16,7 +18,11 @@ const lightThemeColors = {
   ...red,
   ...green,
 
-  bgMain: gray.gray1,
+  // Important blacks and white
+  ...blackA,
+  ...whiteA,
+
+  bgMain: gray.gray2,
   fgMain: mauve.mauve12,
   accent: red.red6,
 };
@@ -26,8 +32,12 @@ const darkThemeColors = {
   ...redDark,
   ...greenDark,
 
-  bgMain: gray.gray1,
-  fgMain: mauve.mauve12,
+  // Important blacks and white
+  ...blackA,
+  ...whiteA,
+
+  bgMain: grayDark.gray2,
+  fgMain: mauve.mauve1,
   accent: red.red6,
 };
 

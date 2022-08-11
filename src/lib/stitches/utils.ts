@@ -1,5 +1,8 @@
 import { CSSProperties, PropertyValue } from '@stitches/react';
+import { Property } from '@stitches/react/types/css';
 import { LiteralUnion } from 'type-fest';
+
+import { DropShadow, DropShadows } from './shadows';
 
 const utils = {
   // Margin: Abbreviated properties
@@ -72,6 +75,22 @@ const utils = {
       return { width, height };
     }
     return { width: val, height: val };
+  },
+  dropShadow: (
+    val: [DropShadow, Property.Color] | DropShadow | PropertyValue<'boxShadow'>
+  ) => {
+    let shadow;
+    if (Array.isArray(val)) {
+      const [token, color] = val;
+      shadow = DropShadows[token].replace(
+        /[$].*/,
+        color.startsWith('$') ? `$colors${color}` : color
+      );
+    }
+
+    shadow ??= DropShadows[val as DropShadow];
+    shadow ??= val;
+    return { filter: `drop-shadow(${shadow})` };
   },
   resolveCSSProperties: (
     entries: ({ [P in keyof CSSProperties]: CSSProperties[P] | boolean } & {
