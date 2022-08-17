@@ -1,10 +1,28 @@
-import createShadow from '../utils/createShadow';
+// With lots of help from
+// https://www.joshwcomeau.com/css/designing-shadows/
 
 const shadows = {
-  sm: createShadow('small', 'gray12'),
-  md: createShadow('medium', 'gray12'),
-  lg: createShadow('large', 'gray12'),
-  soft: createShadow('soft', 'gray12'),
+  sm: '0.5px 1px 1px $colors$blackA4',
+  md: [
+    '1px 2px 2px $colors$blackA5',
+    '2px 4px 4px $colors$blackA5',
+    '3px 6px 6px $colors$blackA5',
+  ].join(','),
+  lg: [
+    '1px 2px 2px $colors$blackA4',
+    '2px 4px 4px $colors$blackA4',
+    '4px 8px 8px $colors$blackA4',
+    '8px 16px 16px $colors$blackA4',
+    '16px 32px 32px $colors$blackA4',
+  ].join(','),
+  soft: [
+    '0 1px 2px $colors$blackA4',
+    '0 2px 4px $colors$blackA4',
+    '0 4px 8px $colors$blackA4',
+    '0 8px 16px $colors$blackA4',
+    '0 16px 32px $colors$blackA4',
+    '0 32px 64px $colors$blackA4',
+  ].join(','),
 } as const;
 
 export const DropShadows = {

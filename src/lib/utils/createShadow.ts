@@ -45,36 +45,30 @@ const createShadow = (
   if (size === 'small') {
     const opacity = opacityOverride ?? 0.47;
     const transparentColor = transparentize(color, opacity);
-    return [
-      `0 1px 1px ${transparentColor}`,
-      `0 2px 2px ${transparentColor}`,
-      `0 4px 4px ${transparentColor}`,
-      `0 6px 8px ${transparentColor}`,
-      `0 8px 16px ${transparentColor}`,
-    ].join(',');
+    return `0.5px 1px 1px ${transparentColor},`;
   }
   if (size === 'medium') {
-    const opacity = opacityOverride ?? 0.31;
-    const transparentColor = transparentize(color, opacity);
-    return `
-      0 2px 2px ${transparentColor},
-      0 4px 4px ${transparentColor},
-      0 8px 8px ${transparentColor}
-    `;
-  }
-  if (size === 'large') {
-    const opacity = opacityOverride ?? 0.2;
+    const opacity = opacityOverride ?? 0.41;
     const transparentColor = transparentize(color, opacity);
     return [
-      `0 2px 1px ${transparentColor}`,
-      `0 4px 2px ${transparentColor}`,
-      `0 8px 4px ${transparentColor}`,
-      `0 16px 8px ${transparentColor}`,
-      `0 32px 16px ${transparentColor}`,
+      `1 2px 2px ${transparentColor}`,
+      `2 4px 4px ${transparentColor}`,
+      `3 8px 8px ${transparentColor}`,
+    ].join(',');
+  }
+  if (size === 'large') {
+    const opacity = opacityOverride ?? 0.33;
+    const transparentColor = transparentize(color, opacity);
+    return [
+      `1px 2px 2px ${transparentColor}`,
+      `2px 4px 4px ${transparentColor}`,
+      `4px 8px 8px ${transparentColor}`,
+      `8px 16px 16px ${transparentColor}`,
+      `16px 32px 32px ${transparentColor}`,
     ].join(',');
   }
   if (size === 'soft') {
-    const opacity = opacityOverride ?? 0.1;
+    const opacity = opacityOverride ?? 0.18;
     const transparentColor = transparentize(color, opacity);
     return [
       `0 1px 2px ${transparentColor}`,

@@ -51,7 +51,7 @@ export const applyGlobalCSS = globalCss({
     { fontFamily: 'SaintGeorge', src: "url('/fonts/SaintGeorge.ttf')" },
   ],
 
-  html: { bgColor: '$bgMain', color: '$fgMain' },
+  html: { bgColor: '$background', color: '$textPrimary' },
   body: { height: '100dvh', fontFamily: '$sans' },
   '#__next': { height: '100vh' },
   '#__next > div': { minHeight: '100%' },

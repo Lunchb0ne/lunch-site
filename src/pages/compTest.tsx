@@ -63,35 +63,35 @@ const Home: ComponentWithLayout<NextPage> = () => {
         </Box>
 
         <Wrapper>
-          <Square css={{ boxShadow: '$small' }} />
-          <Square css={{ boxShadow: '$medium' }} />
-          <Square css={{ boxShadow: '$large' }} />
+          <Square css={{ boxShadow: '$sm' }} />
+          <Square css={{ boxShadow: '$md' }} />
+          <Square css={{ boxShadow: '$lg' }} />
         </Wrapper>
 
-        <Wrapper css={{ background: '$green5' }}>
-          <Square css={{ boxShadow: '$small' }} />
-          <Square css={{ boxShadow: '$medium' }} />
-          <Square css={{ boxShadow: '$large' }} />
+        <Wrapper css={{ background: '$slate4' }}>
+          <Square css={{ boxShadow: '$sm' }} />
+          <Square css={{ boxShadow: '$md' }} />
+          <Square css={{ boxShadow: '$lg' }} />
         </Wrapper>
-        <Wrapper css={{ background: '$green5' }}>
-          <Square css={{ boxShadow: createShadow('small', 'green5') }} />
-          <Square css={{ boxShadow: createShadow('medium', 'green5') }} />
-          <Square css={{ boxShadow: createShadow('large', 'green5') }} />
+        <Wrapper css={{ background: '$slate4' }}>
+          <Square css={{ boxShadow: createShadow('small', 'slate5') }} />
+          <Square css={{ boxShadow: createShadow('medium', 'slate5') }} />
+          <Square css={{ boxShadow: createShadow('large', 'slate5') }} />
         </Wrapper>
-        <Wrapper css={{ background: '$green5' }}>
+        <Wrapper css={{ background: '$slate4' }}>
           <Square
             css={{
-              boxShadow: createShadow('small', desaturate('green5', 0.4)),
+              boxShadow: createShadow('small', desaturate('slate5', 0.4)),
             }}
           />
           <Square
             css={{
-              boxShadow: createShadow('medium', desaturate('green5', 0.4)),
+              boxShadow: createShadow('medium', desaturate('slate5', 0.4)),
             }}
           />
           <Square
             css={{
-              boxShadow: createShadow('large', desaturate('green5', 0.4)),
+              boxShadow: createShadow('large', desaturate('slate5', 0.4)),
             }}
           />
         </Wrapper>
