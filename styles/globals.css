@@ -4,8 +4,36 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    /* Base Colors */
+    --moonlightBase: 230, 4%, 8%;
+    --moonlightInterface: 230, 5%, 9%;
+    --moonlightOverlay: 230, 5%, 10%;
+    --moonlightSoft: 230, 12%, 28%;
+    --moonlightSlight: 230, 14%, 38%;
+    --moonlightText: 230, 6%, 53%;
+    --moonlightFocusLow: 230, 5%, 9%;
+    --moonlightFocusMedium: 230, 6%, 13%;
+    --moonlightFocusHigh: 230, 6%, 16%;
+
+    /* // Moonlight Accents */
+    --moonlightWhite: 0, 0%, 99%;
+    --moonlightStone: 229, 9%, 65%;
+    --moonlightPink: 309, 75%, 70%;
+    --moonlightIndigo: 279, 59%, 75%;
+    --moonlightBlue: 218, 63%, 74%;
+
+     /* Monochrome Accents */
+    --monochromeKashmir: 227, 9%, 47%;
+    --monochromeSlate: 229, 10%, 60%;
+    --monochromeLogan: 230 8% 72%;
+    --monochromeCadet: 229, 11%, 78%
+    --monochromeCat: 230, 7%, 87%
+    --monochromeCloud: 230 6% 91%
+  }
+
+  :root {
+    --background: var(--monochromeCloud);
+    --foreground: var(--moonlightText);
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -13,53 +41,52 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
 
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--monochromeKashmir);
+    --primary-foreground: var(--moonlightText);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --secondary: var(--monochromeSlate);
+    --secondary-foreground: var(--monochromeCat);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--monochromeCat);
+    --accent-foreground: var(--monochromeKashmir);
 
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --ring: 215 20.2% 65.1%;
+    --ring: var(--moonlightBlue);
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
+    --background: var(--moonlightBase);
+    --foreground: var(--moonlightText);
 
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%;
 
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
-
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
-
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
 
     --card: 224 71% 4%;
     --card-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
 
-    --secondary: 222.2 47.4% 11.2%;
+    --primary: var(--moonlightFocusHigh);
+    --primary-foreground: var(--moonlightText);
+
+    --secondary: var(--moonlightFocusLow);
     --secondary-foreground: 210 40% 98%;
+
+    --accent: var(--moonlightOrange);
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
@@ -74,6 +101,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
